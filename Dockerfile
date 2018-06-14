@@ -15,4 +15,4 @@
 #
 
 FROM uubk/debuild:stretch
-RUN apt update && apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev cmake
+RUN apt update && apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev cmake sudo
