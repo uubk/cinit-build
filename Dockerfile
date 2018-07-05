@@ -15,4 +15,10 @@
 #
 
 FROM uubk/debuild:stretch
-RUN apt update && apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev cmake sudo clang-6.0 clang-format clang-tidy-6.0
+
+RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list
+
+RUN apt update && \
+  apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev sudo clang-6.0 clang-format clang-tidy-6.0 && \
+  apt install -y -t stretch-backports cmake && \
+  rm -rf /var/lib/apt/lists/*
