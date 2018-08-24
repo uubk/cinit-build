@@ -14,11 +14,8 @@
 # limitations under the License.
 #
 
-FROM uubk/debuild:stretch
-
-RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list
+FROM ubuntu:xenial
 
 RUN apt update && \
-  apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev sudo clang-6.0 clang-format clang-tidy-6.0 lcov && \
-  apt install -y -t stretch-backports cmake && \
+  apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev sudo clang-6.0 clang-format clang-tidy-6.0 lcov cmake && \
   rm -rf /var/lib/apt/lists/*
