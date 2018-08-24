@@ -17,5 +17,5 @@
 FROM ubuntu:xenial
 
 RUN apt update && \
-  apt install -y libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev sudo clang-6.0 clang-format clang-tidy-6.0 lcov cmake && \
+  apt install -y build-essential devscripts ca-certificates git libcap-dev libyaml-cpp-dev libboost-program-options-dev libboost-filesystem-dev libboost-signals-dev sudo clang-6.0 clang-format clang-tidy-6.0 lcov cmake && \
   rm -rf /var/lib/apt/lists/*
